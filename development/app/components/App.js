@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import { AlertStripeSuksess } from 'NavFrontendModules/nav-frontend-alertstriper';
-import { Hovedknapp, Fareknapp } from 'NavFrontendModules/nav-frontend-knapper';
-import Chevron from 'NavFrontendModules/nav-frontend-chevron';
+import React, { Component } from "react";
+import { AlertStripeSuksess } from "NavFrontendModules/nav-frontend-alertstriper";
+import { Hovedknapp, Fareknapp } from "NavFrontendModules/nav-frontend-knapper";
+import Chevron from "NavFrontendModules/nav-frontend-chevron";
+import Internheader from "NavFrontendModules/nav-frontend-internheader";
 
-import './styles.less';
+import "./styles.less";
 
 /*
  * Her er komponenten som benyttes til utvikling av eksisterende og nye moduler til nav-frontend.
@@ -17,12 +18,20 @@ import './styles.less';
  * Enjoy!
  */
 
-
 // eslint-disable-next-line react/prefer-stateless-function
 export default class App extends Component {
     render() {
         return (
             <div>
+                <Internheader
+                    produktTittel={"NAV Kontantstøtte"}
+                    saksbehandlerNavn={"H. Hansen"}
+                    saksbehandlerEnhet={"NAV Sagene"}
+                    saksbehandlerIdent={"X010101"}
+                    saksbehandlerTittel={"Veileder"}
+                />
+
+                <br />
                 <AlertStripeSuksess>Heisann Hoppsann!</AlertStripeSuksess>
                 <Hovedknapp>Hovedknapp</Hovedknapp>
                 <Fareknapp>Fareknapp</Fareknapp>
