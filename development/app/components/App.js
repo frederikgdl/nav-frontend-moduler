@@ -24,11 +24,14 @@ export default class App extends Component {
         return (
             <div>
                 <Internheader
-                    produktTittel={"NAV Kontantstøtte"}
+                    produkttittel={"NAV Kontantstøtte"}
                     saksbehandlerNavn={"H. Hansen"}
                     saksbehandlerEnhet={"NAV Sagene"}
                     saksbehandlerIdent={"X010101"}
                     saksbehandlerTittel={"Veileder"}
+                    brukLoggUtModal={true}
+                    onLoggUtClick={() => console.log("Logg ut")}
+                    onProdukttittelClick={() => console.log("Produkt tittel")}
                 />
 
                 <br />
