@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import { AlertStripeSuksess } from "NavFrontendModules/nav-frontend-alertstriper";
-import { Hovedknapp, Fareknapp } from "NavFrontendModules/nav-frontend-knapper";
+import {
+    Hovedknapp,
+    Fareknapp,
+    Flatknapp
+} from "NavFrontendModules/nav-frontend-knapper";
+import {
+    Normaltekst,
+    Systemtittel
+} from "NavFrontendModules/nav-frontend-typografi";
 import Chevron from "NavFrontendModules/nav-frontend-chevron";
-import Internheader from "NavFrontendModules/nav-frontend-internheader";
+import Internheader, {
+    Brukermeny
+} from "NavFrontendModules/nav-frontend-internheader";
 
 import "./styles.less";
 
@@ -23,16 +33,23 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <Internheader
-                    produkttittel={"NAV Kontantstøtte"}
-                    saksbehandlerNavn={"H. Hansen"}
-                    saksbehandlerEnhet={"NAV Sagene"}
-                    saksbehandlerIdent={"X010101"}
-                    saksbehandlerTittel={"Veileder"}
-                    brukLoggUtModal={true}
-                    onLoggUtClick={() => console.log("Logg ut")}
-                    onProdukttittelClick={() => console.log("Produkt tittel")}
-                />
+                <Internheader>
+                    <Flatknapp>
+                        <Systemtittel style={{ color: "white" }}>
+                            NAV Kontantstøtte
+                        </Systemtittel>
+                    </Flatknapp>
+
+                    <div style={{ flexGrow: 1 }} />
+
+                    <Brukermeny navn={"Test Testersen"} enhet={"NAV Sagene"}>
+                        <Flatknapp onClick={() => console.log("logg ut")}>
+                            <Normaltekst style={{ color: "white" }}>
+                                Logg ut
+                            </Normaltekst>
+                        </Flatknapp>
+                    </Brukermeny>
+                </Internheader>
 
                 <br />
                 <AlertStripeSuksess>Heisann Hoppsann!</AlertStripeSuksess>
